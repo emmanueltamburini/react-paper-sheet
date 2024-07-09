@@ -11,6 +11,12 @@ import PerformanceExample from './components/PerformanceExample';
 import SSRExample from './components/SSRExample';
 import TestingExample from './components/TestingExample';
 import StylingExample from './components/StylingExample';
+import HOCExample from './components/HOCExample';
+import RenderPropsExample from './components/RenderPropsExample';
+import RefsExample from './components/RefsExample';
+import PortalsExample from './components/PortalsExample';
+import CodeSplittingExample from './components/CodeSplittingExample';
+import ErrorBoundaryExample from './components/ErrorBoundaryExample';
 
 const App: React.FC = () => {
   return (
@@ -49,6 +55,24 @@ const App: React.FC = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/styling">Styling</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/hoc">HOCs</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/render-props">Render Props</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/error-boundary">Error Boundaries</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/refs">Refs</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/portals">Portals</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/code-splitting">Code Splitting</Link>
+            </li>
           </ul>
 
           <div className="mt-4">
@@ -63,6 +87,12 @@ const App: React.FC = () => {
               <Route path="/ssr" element={<SSRExample/>} />
               <Route path="/testing" element={<TestingExample/>} />
               <Route path="/styling" element={<StylingExample/>} />
+              <Route path="/hoc" element={<HOCExample />} />
+              <Route path="/render-props" element={<RenderPropsExample />} />
+              <Route path="/error-boundary" element={<ErrorBoundaryExample />} />
+              <Route path="/refs" element={<RefsExample />} />
+              <Route path="/portals" element={<PortalsExample />} />
+              <Route path="/code-splitting" element={<CodeSplittingExample />} />
             </Routes>
           </div>
         </div>
