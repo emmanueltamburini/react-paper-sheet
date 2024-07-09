@@ -477,11 +477,9 @@ For more information on React, visit: <https://reactjs.org/>
    }
    ```
 
-Certainly! I'll format and incorporate this content into the README_react structure, maintaining the style and indentation of the previous sections. Here's the formatted version:
-
 ### 6. Forms and Controlled Components
 
-In React, form elements such as <input>, <textarea>, and <select> maintain their own state. A controlled component is one where React controls the state of these form elements.
+In React, form elements such as input, textarea, and select maintain their own state. A controlled component is one where React controls the state of these form elements.
 
 Example:
 
