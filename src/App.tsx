@@ -6,6 +6,11 @@ import LifecycleExample from './components/LifecycleExample';
 import StateManagementExample from './components/StateManagementExample';
 import RoutingExample from './components/RoutingExample';
 import HooksExample from './components/HooksExample';
+import FormsExample from './components/FormsExample';
+import PerformanceExample from './components/PerformanceExample';
+import SSRExample from './components/SSRExample';
+import TestingExample from './components/TestingExample';
+import StylingExample from './components/StylingExample';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +34,21 @@ const App: React.FC = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/routing">Routing</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/forms">Forms</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/performance">Performance</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/ssr">SSR</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/testing">Testing</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/styling">Styling</Link>
+            </li>
           </ul>
 
           <div className="mt-4">
@@ -38,6 +58,11 @@ const App: React.FC = () => {
               <Route path="/lifecycle" element={<LifecycleExample />} />
               <Route path="/state-management" element={<StateManagementExample />} />
               <Route path="/routing/*" element={<RoutingExample />} />
+              <Route path="/forms" element={<FormsExample/>} />
+              <Route path="/performance" element={<PerformanceExample/>} />
+              <Route path="/ssr" element={<SSRExample/>} />
+              <Route path="/testing" element={<TestingExample/>} />
+              <Route path="/styling" element={<StylingExample/>} />
             </Routes>
           </div>
         </div>
