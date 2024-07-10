@@ -17,6 +17,7 @@ import RefsExample from './components/RefsExample';
 import PortalsExample from './components/PortalsExample';
 import CodeSplittingExample from './components/CodeSplittingExample';
 import ErrorBoundaryExample from './components/ErrorBoundaryExample';
+import ControlledVsUncontrolled from './components/ControlledVsUncontrolled';
 
 const App: React.FC = () => {
   return (
@@ -73,6 +74,9 @@ const App: React.FC = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/code-splitting">Code Splitting</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/controlled-vs-uncontrolled">Controlled vs uncontrolled</Link>
+            </li>
           </ul>
 
           <div className="mt-4">
@@ -93,6 +97,7 @@ const App: React.FC = () => {
               <Route path="/refs" element={<RefsExample />} />
               <Route path="/portals" element={<PortalsExample />} />
               <Route path="/code-splitting" element={<CodeSplittingExample />} />
+              <Route path="/controlled-vs-uncontrolled" element={<ControlledVsUncontrolled />} />
             </Routes>
           </div>
         </div>

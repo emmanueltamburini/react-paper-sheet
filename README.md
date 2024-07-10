@@ -124,6 +124,8 @@ For more information on React, visit: <https://reactjs.org/>
     - React.lazy
     - Suspense
 
+17. Controlled vs Uncontrolled Components
+
 ## Resume
 
 ### 1. React Basics
@@ -159,7 +161,12 @@ For more information on React, visit: <https://reactjs.org/>
    ```
 
    c) Props:
-   Props are how components receive data from their parent.
+Props (short for properties) are inputs to a React component. They are passed down from a parent component to a child component.
+How props work internally:
+
+- Props are read-only and should not be modified by the child component.
+- When a parent component's props change, React will re-render the child component with the new props.
+- Props are passed down through the component tree.
 
    Example:
 
@@ -174,7 +181,13 @@ For more information on React, visit: <https://reactjs.org/>
    ```
 
    d) State:
-   State is mutable data that affects a component's rendering.
+   State is a JavaScript object that represents the internal data of a component. It's mutable and can be updated using the setState method (in class components) or state update functions (in functional components with hooks).
+    How state works internally:
+
+- When a component's state changes, React schedules a re-render of that component.
+- React uses a reconciliation process to efficiently update the DOM.
+- State updates may be batched for performance.
+- State updates are merged into the current state object.
 
    Example:
 
@@ -846,3 +859,86 @@ These advanced topics provide powerful tools for React development:
 - Code Splitting helps improve performance by loading code on demand.
 
 Understanding these concepts will allow you to build more complex and efficient React applications. They provide solutions to common problems in large-scale applications and offer ways to optimize performance and improve user experience.
+
+### 17. Controlled vs Uncontrolled Components
+
+Controlled Components:
+
+The component's state controls the value of the form element.
+Any input change triggers a state update.
+The component has full control over the form data.
+
+Example of a controlled component:
+
+```jsx
+function ControlledInput() {
+  const [value, setValue] = useState('');
+  return <input value={value} onChange={e => setValue(e.target.value)} />;
+}
+```
+
+Uncontrolled Components:
+
+Form data is handled by the DOM itself.
+You use a ref to get form values from the DOM.
+React doesn't control the input's state.
+
+Example of an uncontrolled component:
+
+```jsx
+function UncontrolledInput() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  return <input ref={inputRef} />;
+}
+```
+
+## Exhibit
+
+Virtual DOM in React:
+
+The Virtual DOM is a lightweight copy of the actual DOM. React uses it to improve performance by minimizing direct manipulation of the DOM.
+How the Virtual DOM works, step by step:
+
+Initial Render:
+
+- React creates a virtual DOM representation of the entire UI.
+- It then renders this to the actual DOM.
+
+State or Prop Changes:
+
+- When a component's state or props change, React creates a new virtual DOM tree.
+
+Diffing:
+
+- React compares the new virtual DOM with the previous one.
+- It identifies the differences (this process is called "diffing").
+
+Reconciliation:
+
+- React calculates the most efficient way to update the actual DOM.
+- It determines which parts of the actual DOM need to be updated.
+
+Batching:
+
+- React batches multiple changes together for performance.
+
+Actual DOM Update:
+
+- React updates only the necessary parts of the actual DOM.
+- This minimizes layout thrashing and improves performance.
+
+Post-Update Lifecycle:
+
+- After the DOM is updated, certain lifecycle methods or hooks are called.
+
+Re-render:
+
+- The updated component and its children are re-rendered if necessary.
+
+This process allows React to optimize rendering and improve performance by:
+
+- Minimizing direct DOM manipulation
+- Batching DOM reads and writes
+- Updating only what's necessary
+
+The Virtual DOM, combined with React's reconciliation algorithm, is what makes React efficient at updating the UI in response to data changes.
